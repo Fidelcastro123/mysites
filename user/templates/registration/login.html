@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="" content="">
+    <title>login</title>
+  </head>
+  <body>
+    <form action="{% url 'login' %}" method="post">
+      {% if form.error %}
+       <p>There is something wrong with what you have entered</p>
+      {% endif %}
+      {% csrf_token %}
+     <p>username: {{form.username}}</p>
+      <p>password:{{form.password}}</p>
+      <p></p><input type="submit"  value="login" /></p>
+       <a href="{% url 'password_reset' %}">forgot your password?</a>
+      <input type="hidden" name="next"  value="{{next}}" />
+    </form>
+  </body>
+</html>

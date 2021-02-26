@@ -1,11 +1,10 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OHSA Alumni</title>
-    {% load static %}
     <link rel="stylesheet" href="{% static 'styles.css' %}">
     <script  src="{% static 'script.js' %}"></script>
       
@@ -39,19 +38,20 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="activities.html">Activities.</a>
+        <a class="nav-link" href="activities.html">Activities</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link active" href="library.html">Library.</a>
+        <a class="nav-link active" href="{% url 'user' %}">Executive</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link active" href="{% url 'user' %}">Executive.</a>
+         <li class="nav-item">
+        <a class="nav-link active" href="{% url 'home' %}">Uploads</a>
       </li>
-    </ul>
     </div>
+    </ul>
+   
     </nav>
     {% if user.is_authenticated %}
      <a href="{% url 'logout' %}">logout</a>
@@ -99,7 +99,7 @@
   <div id="mid">
     <div class="container">
       <div class="row">
-      <div class="col-md-4 profile-pic text-center">
+      <div class="col-md-4 col-lg-4 col-12 profile-pic text-center">
           <h2 class="h2">Our partners</h2>
           <div class="btnbig">
             <p>
@@ -111,7 +111,7 @@
            
         </div>
       </div>
-      <div class="col-md-4 profile-pic text-center">
+      <div class="col-md-4 col-lg-4 col-12 profile-pic text-center">
         <h2 class="h2">Mission</h2>
         <div class="about-content">
           <p>
@@ -122,7 +122,7 @@
           </p>
       </div>
     </div>
-    <div class="col-md-4 profile-pic text-center">
+    <div class="col-md-4 col-lg-4 col-12 profile-pic text-center">
       <h2 class="h2">Vision</h2>
       <div class="about-content">
         <p>
@@ -140,7 +140,7 @@
     <div class="container">
       <h1 class="h1">Our team</h1>
       <div class="row">
-        <div class="col-md-4 profile-pic text-center">
+        <div class="col-md-4 col-lg-4 col-12 profile-pic text-center">
           <div class="img-box">
             <img src="{% static 'images/barak.jpg'%}" width="250px" height="200" class="img-responsive">
             <ul>
